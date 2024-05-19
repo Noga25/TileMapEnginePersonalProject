@@ -20,7 +20,7 @@ namespace ConsoleRendere
             Console.WriteLine("Welcome to the tile map engine rendere !!");
             Console.WriteLine("Press A to see the board with two colors");
             Console.WriteLine("Press B to see the board with one color");
-            Console.WriteLine("Press any key to start...");
+            Console.WriteLine("Choose a key to start...");
             Console.ReadKey(true);
             ShowBoard();
         }
@@ -32,13 +32,41 @@ namespace ConsoleRendere
             if (keyInfo == ShowBoardKey_TwoColors)
             {
                 Console.Clear();
-                Console.WriteLine("Pressed A");
+                Board();
             }
 
             else if (keyInfo == ShowBoardKey_OneColors)
             {
                 Console.Clear();
                 Console.WriteLine("Pressed B");
+            }
+        }
+
+        public void Board()
+        {
+            // Define the size of the chessboard
+            int boardSize = 8;
+
+            // Iterate through each row
+            for (int row = 0; row < boardSize; row++)
+            {
+                // Iterate through each column in the current row
+                for (int col = 0; col < boardSize; col++)
+                {
+                    if(col % 2 == 0)
+                    {
+                        // Print the current cell's index in the format (row, column)
+                        Console.Write($"({row}, {col}) ");
+                    }
+
+                    else if (col % 2 != 0)
+                    {
+                        // Print the current cell's index in the format (row, column)
+                        Console.Write($"({row}, {col}) ");
+                    }
+                }
+                // Print a newline character after each row to format the board correctly
+                Console.WriteLine();
             }
         }
 
