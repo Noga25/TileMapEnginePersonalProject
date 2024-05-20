@@ -48,27 +48,38 @@ namespace ConsoleRendere
             int boardSize = 8;
 
             // Iterate through each row
-            for (int row = 0; row < boardSize; row++)
+            for (int row = -1; row < boardSize; row++)
             {
                 // Iterate through each column in the current row
                 for (int col = 0; col < boardSize; col++)
                 {
-                    if(col % 2 == 0)
+                    if(row == - 1)
                     {
-                        // Print the current cell's index in the format (row, column)
-                        Console.Write($"({row}, {col}) ");
+                        Console.ForegroundColor = ConsoleColor.Blue;
                     }
 
-                    else if (col % 2 != 0)
+                    // Determine the color based on the position
+                    if ((row + col) % 2 == 0 && row >= 0)
                     {
-                        // Print the current cell's index in the format (row, column)
-                        Console.Write($"({row}, {col}) ");
+                        Console.BackgroundColor = ConsoleColor.Gray;
                     }
+                    else
+                    {
+                        Console.BackgroundColor = ConsoleColor.White;
+                    }
+
+                    // Print the current cell with a space to separate columns
+                    Console.Write("  "); // Two spaces to form a square-like cell
                 }
-                // Print a newline character after each row to format the board correctly
+                // Reset the background color and move to the next line after each row
+                Console.ResetColor();
                 Console.WriteLine();
             }
+
+            // Reset the color to default
+            Console.ResetColor();
         }
+
 
         public void ActivateRender()
         {
