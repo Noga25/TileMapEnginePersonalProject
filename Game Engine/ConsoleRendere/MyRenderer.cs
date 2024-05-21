@@ -47,35 +47,59 @@ namespace ConsoleRendere
             // Define the size of the chessboard
             int boardSize = 8;
 
+            // Column labels (numbers)
+            Console.Write("  ");
+            for (int col = 0; col < boardSize; col++)
+            {
+                //Console.Write($" {col + 1}");
+            }
+            Console.WriteLine();
+
             // Iterate through each row
             for (int row = -1; row < boardSize + 1; row++)
             {
-                // Iterate through each column in the current row
-                for (int col = 0; col < boardSize; col++)
+                // Print the row labels
+                if (row >= 0 && row < boardSize)
                 {
-                    if(row == - 1)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Blue;
-                    }
+                    Console.Write("  ");
+                }
+                else
+                {
+                    Console.Write("  ");
+                }
 
-                    // Determine the color based on the position
-                    if ((row + col) % 2 == 0 && row >= 0 && row != boardSize)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Gray;
-                    }
-                    else if(row != - 1) 
+                // Iterate through each column in the current row
+                for (int col = -1; col < boardSize + 1; col++)
+                {
+                    if (col == -1 || col == boardSize)
                     {
                         Console.BackgroundColor = ConsoleColor.White;
+                        Console.Write("  ");
                     }
 
-                    else if (row == boardSize)
+                    else if(row == -1 || row == boardSize)
                     {
-                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.Write("  ");
                     }
 
-                    // Print the current cell with a space to separate columns
-                    Console.Write("  "); // Two spaces to form a square-like cell
+                    else
+                    {
+                        // Determine the color based on the position
+                        if ((row + col) % 2 == 0)
+                        {
+                            Console.BackgroundColor = ConsoleColor.DarkGray;
+                        }
+                        else
+                        {
+                            Console.BackgroundColor = ConsoleColor.Gray;
+                        }
+
+                        // Print the current cell with a space to separate columns
+                        Console.Write("  "); // Two spaces to form a square-like cell
+                    }
                 }
+
                 // Reset the background color and move to the next line after each row
                 Console.ResetColor();
                 Console.WriteLine();
