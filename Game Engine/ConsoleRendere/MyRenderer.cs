@@ -74,13 +74,15 @@ namespace ConsoleRendere
                     if (col == -1 || col == boardSize)
                     {
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.Write("  ");
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write($" {row + 1}");
                     }
 
                     else if(row == -1 || row == boardSize)
                     {
+                        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.Write("  ");
+                        Console.Write($" {alphabet[7]}");
                     }
 
                     else
