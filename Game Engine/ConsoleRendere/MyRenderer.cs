@@ -48,24 +48,29 @@ namespace ConsoleRendere
             int boardSize = 8;
 
             // Iterate through each row
-            for (int row = -1; row < boardSize; row++)
+            for (int row = -1; row < boardSize + 1; row++)
             {
                 // Iterate through each column in the current row
                 for (int col = 0; col < boardSize; col++)
                 {
                     if(row == - 1)
                     {
-                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.BackgroundColor = ConsoleColor.Blue;
                     }
 
                     // Determine the color based on the position
-                    if ((row + col) % 2 == 0 && row >= 0)
+                    if ((row + col) % 2 == 0 && row >= 0 && row != boardSize)
                     {
                         Console.BackgroundColor = ConsoleColor.Gray;
                     }
-                    else
+                    else if(row != - 1) 
                     {
                         Console.BackgroundColor = ConsoleColor.White;
+                    }
+
+                    else if (row == boardSize)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
                     }
 
                     // Print the current cell with a space to separate columns
