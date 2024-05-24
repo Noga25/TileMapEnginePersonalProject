@@ -48,7 +48,7 @@ namespace CoreEngineHirechy
                     {
                         char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.Write($" {alphabet[7]}");
+                        Console.Write($" {alphabet[col]}");
                     }
 
                     else
