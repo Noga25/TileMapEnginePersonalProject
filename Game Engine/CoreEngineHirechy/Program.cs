@@ -8,8 +8,8 @@ namespace CoreEngineHirechy
         {
             Console.WriteLine("Hello, World!");
             TileMap tileMap = new TileMap();
+            Player player = new Player(1, ConsoleColor.White, 0, 1, new TileObject("P", new[] { new Position(3, 4) }, new Position(3, 4), null));
             tileMap.Board();
-            Player player = new Player(1, ConsoleColor.White, 0, 1, new TileObject("P", new[] { new Position(0, 0) }, new Position(0, 0), null));
         }
     }
 }

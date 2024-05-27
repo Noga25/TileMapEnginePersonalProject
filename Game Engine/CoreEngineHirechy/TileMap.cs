@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,8 +65,19 @@ namespace CoreEngineHirechy
                             Console.BackgroundColor = ConsoleColor.Gray;
                         }
 
-                        // Print the current cell with a space to separate columns
-                        Console.Write("  "); // Two spaces to form a square-like cell
+                        if (row == Player.GetInstance().CurrentPos.X && col == Player.GetInstance().CurrentPos.Y)
+                        {
+                            Console.ForegroundColor = Player.GetInstance().Color;
+                            Console.Write($" {Player.GetInstance().TileObjectChar} ");
+                        }
+                        else
+                        {
+                            // Print the current cell with a space to separate columns
+                            Console.Write("  "); // Two spaces to form a square-like cell
+                        }
+
+                        //// Print the current cell with a space to separate columns
+                        //Console.Write("  "); // Two spaces to form a square-like cell
                     }
                 }
 
