@@ -65,10 +65,11 @@ namespace CoreEngineHirechy
                             Console.BackgroundColor = ConsoleColor.Gray;
                         }
 
-                        if (row == Player.GetInstance().CurrentPos.X && col == Player.GetInstance().CurrentPos.Y)
+                        if (row == Player.GetInstance().MovesToX && col == Player.GetInstance().MovesToY)
                         {
-                            Console.ForegroundColor = Player.GetInstance().Color;
-                            Console.Write($" {Player.GetInstance().TileObjectChar} ");
+                            Console.ForegroundColor = Player.GetInstance().PiecesColor;
+                            Console.Write("  ");
+                            //Console.Write($" {Player.GetInstance().MovesToY} ");
                         }
                         else
                         {

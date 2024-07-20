@@ -4,6 +4,9 @@ namespace CoreEngineHirechy
 {
     public class Player
     {
+        private static Player _instance;
+        private static readonly object _lock = new object();
+
         public int PlayerID { get; private set; }
         public string Name { get; private set; } = string.Empty;
         public List<TileObject> PiecesOwned { get; private set; } = new List<TileObject>();
@@ -38,6 +41,25 @@ namespace CoreEngineHirechy
             PiecesColor = piecesColor;
             MovesToX = movesToX;
             MovesToY = movesToY;
+        }
+
+        public Player()
+        {
+        }
+
+        public static Player GetInstance()
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new Player();
+                    }
+                }
+            }
+            return _instance;
         }
     }
 
