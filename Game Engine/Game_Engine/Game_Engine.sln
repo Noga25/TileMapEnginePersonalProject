@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PositionAssembly", "..\Posi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleRendere", "..\ConsoleRendere\ConsoleRendere.csproj", "{F2B4371D-7487-47BC-817E-E7745ED4173D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEngineHirechy", "..\CoreEngineHirechy\CoreEngineHirechy.csproj", "{61AC81F5-0352-4D90-B92D-5207F38494B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreEngineHirechy", "..\CoreEngineHirechy\CoreEngineHirechy.csproj", "{61AC81F5-0352-4D90-B92D-5207F38494B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovmentPlayer", "..\MovmentPlayer\MovmentPlayer.csproj", "{8AD5029B-CD2B-40F0-BB2F-1C78FA1384DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{61AC81F5-0352-4D90-B92D-5207F38494B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61AC81F5-0352-4D90-B92D-5207F38494B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61AC81F5-0352-4D90-B92D-5207F38494B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD5029B-CD2B-40F0-BB2F-1C78FA1384DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD5029B-CD2B-40F0-BB2F-1C78FA1384DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD5029B-CD2B-40F0-BB2F-1C78FA1384DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD5029B-CD2B-40F0-BB2F-1C78FA1384DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
